@@ -1,0 +1,5 @@
+#!/usr/bin/less
+
+Installation:
+    cp vimscripts/plugin/* ~/.vim/plugin/
+    cp vimscripts/doc/* ~/.vim/doc/

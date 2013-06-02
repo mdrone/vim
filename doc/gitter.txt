@@ -1,0 +1,33 @@
+#!/usr/bin/less
+
+The username gets grabbed from .gitconfig and lowered
+    git config --global --get user.name
+convert username to lowercase
+    s/[A-Z]/\L&/g
+You will be prompted for the password
+
+GitRepoCreate does the following:
+GIT-API http://developer.github.com/v3/repos/#create (POST /user/repos)
+creates a new repos labeled after the current working directory (pwd)
+initialises it and adds the url
+    curl -u 'USER' -d '{"name":"REPO"}' "https://api.github.com/user/repos"
+    git init
+    git remote add origin https://github.com/USER/REPO.git
+#git add ./*
+#git push origin master
+settings:
+    "private": false,
+    "has_issues": true,
+    "has_wiki": true,
+
+GitRepoDelete:
+takes the wanted repos as an argument 
+GIT-API http://developer.github.com/v3/repos/#delete-a-repository (DELETE /repos/:owner/:repo)
+    curl -u 'USER' -X DELETE "https://api.github.com/repos/USER/REPO"
+
+GitRepoRename:
+takes the old name and the new name as argument
+GIT-API http://developer.github.com/v3/repos/#edit PATCH /repos/:owner/:repo 
+    curl -u 'USER' -X PATCH -d '{"name": NewRepoName"}' "https://api.github.com/repos/USER/REPO"
+
+TODO:
