@@ -36,7 +36,14 @@
 :   execute "!" . command . guser . modifier . gapiurl 
 :endfunction
 
+"Gist post
+:function! GistPost()
+:   let content = join(getline(1, line('$')), "\n")
+:   let command = expand('curl -X POST -d ').expand("'{ \"files\": {\"").expand("%:r").expand('":{"content": "').content.expand("\"}} }' ").expand('https://api.github.com/gists')
+:   execute "!" . command
+:endfunction
 
+command! GistPost call GistPost()
 command! GitRepoCreate call GitRepoCreate() 
 command! -nargs=1 GitRepoDelete call GitRepoDelete(<f-args>) 
 command! -nargs=+ GitRepoRename call GitRepoRename(<f-args>) 

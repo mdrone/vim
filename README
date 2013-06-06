@@ -3,3 +3,7 @@
 Installation:
     cp vimscripts/plugin/* ~/.vim/plugin/
     cp vimscripts/doc/* ~/.vim/doc/
+
+TODO: GIST
+    curl -X POST -d '{ "files": {"myfirstscript":{"content": "´cat myfirstscript´" }} }' https://api.github.com/gists -v
+    let content = join(getline(1, line('$')), "\n")
