@@ -97,3 +97,7 @@ command! Flex execute "!flex -o ./%:r.c ./% && gcc ./%:r.c -o ./%:r -ggdb -l fl 
 
 command! Wget execute "!wget -c -i ./%"
 command! WordCount call Wc()
+
+nnoremap <F10> :Hexmode<CR>
+inoremap <F10> <Esc>:Hexmode<CR>
+vnoremap <F10> :<C-U>Hexmode<CR>
