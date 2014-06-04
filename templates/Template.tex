@@ -3,14 +3,19 @@
 % File Name     :
 % Purpose       :
 % Creation Date :
-% Last Modified : Thu 06 Jun 2013 09:26:08 PM CEST
+% Last Modified : Wed 04 Jun 2014 02:27:11 PM CEST
 % Created By    :
 %
 
+\\documentclass[a4paper]{article}
 
-\\documentclass[a4paper,12pt]{article}
+\\usepackage{listing}
 
 \\usepackage{amsfonts}
+
+\\usepackage{amssymb}
+
+\\usepackage{listings}
 
 \\usepackage{tabularx}
 
@@ -20,30 +25,64 @@
 
 \\usepackage{fancyhdr}
 
+\\usepackage{amsmath}
+
+\\usepackage{graphicx}
+
+\\usepackage[hidelinks]{hyperref}
+
+\\usepackage{biblatex}
+
 \\pagestyle{fancy}
 
 \\fancyhead[R]{\today}
 
-\\fancyhead[C]{fancyhead C}
+\\fancyhead[L]{Vorlesung}
 
-\\fancyhead[L]{fancyhead L}
-
-\\usepackage{amsmath} 
-
+\\lstset{
+breaklines=true,
+literate={ö}{{\"o}}1
+         {ä}{{\"a}}1
+         {ü}{{\"u}}1
+         {ß}{{\ss}}2
+         {Ä}{{\"A}}1
+         {Ü}{{\"U}}1
+         {Ö}{{\"O}}1
+}
 
 
 \\begin{document}
 
+\\title{Projekt}
 
-\\begin{center}
+\\author{AUTHOR}
 
-	\\Large
+\\maketitle
 
-	\\textbf{Ueberschrift}
 
-\\end{center}
+\\newpage
 
-\\subsection{Aufgabe 1}
+\\tableofcontents
+
+
+\\newpage
+
+\\setcounter{tocdepth}{2}
+
+
+\\newpage
+
+\\section{Einleitung}
+
+
+\\subsection{Szenario}
+
+
+\\subsection{Problemstellung}
+
+
+\\footnote{link}
+
 
 \\begin{tabular} [h] {||c|l|c||} 
 
@@ -70,6 +109,21 @@
 \\end{tabular}
 
 
+\\newpage
+
+\\begin{appendix}
+
+
+\\section{Anhang}
+
+\\end{appendix}
+
+
+\\newpage
+
+\\begin{thebibliography}{15}
+
+\\end{thebibliography}
 
 
 \\end{document}

@@ -1,0 +1,164 @@
+:insert
+%
+% File Name     : folien.tex
+% Purpose       :
+% Creation Date : 28-03-2014
+% Last Modified : Wed 04 Jun 2014 02:26:20 PM CEST
+% Created By    :
+%
+
+
+\\documentclass[xcolor=table]{beamer}
+
+\\usepackage[utf8]{inputenc}
+
+\\usepackage[ngerman]{babel}
+
+\\usepackage{graphicx}
+
+\\usepackage{biblatex}
+
+\\usepackage{ragged2e}
+
+
+\\usetheme{Darmstadt}
+
+\\logo{\includegraphics[scale=1]{logo.png}}
+
+\\title{Title}
+
+\\author{AUTHOR}
+
+\\date{\today}
+
+
+\\begin{document}
+
+\\maketitle
+
+\\setcounter{tocdepth}{1}
+
+
+\\frame{\frametitle{Agenda}\tableofcontents}
+
+
+\\section{Einleitung}
+
+\\begin{frame}{\secname}
+
+\\end{frame}
+
+
+\\subsection{Funktionsweise}
+
+\\begin{frame}{\secname : \subsecname}
+
+    \\begin{itemize}
+
+        \\item[] 
+
+    \\end{itemize}
+
+\\end{frame}  
+
+
+\\subsection{Bewertung}
+
+\\begin{frame}{\secname : \subsecname}
+
+	\\begin{columns}
+
+        \\column{.5\textwidth}
+
+{
+        \\setbeamercolor{block title}{bg=green, fg=white}
+
+        \\begin{block}{Vorteile}
+
+            \\begin{itemize}
+
+                \\item 
+
+                \\item
+
+                \\item
+
+            \\end{itemize}
+
+        \\end{block}	
+}
+
+        \\column{.5\textwidth}
+
+{
+        \\setbeamercolor{block title}{bg=red, fg=white}
+
+        \\begin{block}{Nachteile}
+
+            \\begin{itemize}
+
+                \\item
+
+                \\item
+
+                \\item 
+
+            \\end{itemize}
+
+        \\end{block}	
+}
+
+    \\end{columns}		
+
+\\end{frame}  
+
+
+\\section{Zusammenfassung}
+
+\\begin{frame}{\secname}
+
+    Tabelle Gegenueberstellung...
+
+\\end{frame}
+
+
+\\begin{frame}[plain]
+
+    \\begin{center}
+    
+    \\huge Vielen Dank.
+
+    \\end{center}
+
+\\end{frame}
+
+
+\\appendix
+
+\\begin{frame}[allowframebreaks]{Quellen}
+
+    \\begin{thebibliography}{AUTOR, ERSCHEINUNGSJAHR}
+
+    \\tiny
+
+        \\bibitem[AUTOR, ERSCHEINUNGSJAHR]{AUTORJAHR}
+            AUTOR.
+
+            \\newblock TITEL.
+
+            \\newblock {\em VERLAG, ERSCHEINUNGSJAHR, ISBN}.
+
+
+        \\bibitem[AUTOR]{2014}
+            TITEL,
+
+            \\newblock \scalebox{.9}{\url{https://www.seite.com/de/datei.pdf}}
+
+            \\newblock {\em besucht am \date}.
+
+
+    \\end{thebibliography}
+
+\\end{frame}
+
+\\end{document}
