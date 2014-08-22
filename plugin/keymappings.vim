@@ -11,13 +11,13 @@ cnorea Q q
 cnorea W w
 
 :map! <F3> <ESC>i/**<CR><BS>* <CR>*<CR>*/<ESC>kkA
-:map! ü (
-:map! Ü )
-:map! ö [
-:map! ä ]
-:map! Ö {
-:map! Ä }
-:map! ß /
+":map! ü (
+":map! Ü )
+":map! ö [
+":map! ä ]
+":map! Ö {
+":map! Ä }
+":map! ß /
 
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
