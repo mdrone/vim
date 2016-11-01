@@ -1,39 +1,20 @@
 :insert
-/*
-* File Name     :
-* Purpose       :
-* Creation Date :
-* Last Modified :
-* Created By    :
-*
-*/
+/**
+ * File Name     :
+ * Purpose       :
+ * Creation Date :
+ * Last Modified : Sun 17 Nov 2013 02:43:47 PM CET
+ * Created By    :
+ *
+ */
 
-/*
+package TempPackage;
 
-
-
-*/
-
-/* ------------------------Zum Testen Einlesen per Datei-------------- */ 
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
-/* ------------------------Zum Testen Einlesen per Datei-------------- */
+import java.io.*;
 
 
-
-/* -----------------------Dynamische Arrays---------------------------- */
-import java.util.ArrayList;
-/* -----------------------Dynamische Arrays---------------------------- */
-
-public class Template 
-{
-	public static void main( String[] args )
-	{
-		System.out.println("Hello World!");	
-		
-		//eingabeMenu = new java.util.Scanner ( System.in ).nextInt();
-	}
+public class Template {
+    public static void main(String[] args) {
+        System.out.println("Hello World!"); 
+    }
 }

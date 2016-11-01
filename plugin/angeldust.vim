@@ -75,8 +75,19 @@
 :   let &modifiable=l:oldmodifiable
 :endfunction
  
-
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MULTIPURPOSE TAB KEY
+" Indent if we're at the beginning of a line. Else, do completion.
+" https://github.com/garybernhardt/dotfiles
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
 
 " ex command for toggling hex mode - define mapping if desired
 command! -bar Hexmode call ToggleHex()
@@ -97,7 +108,3 @@ command! Flex execute "!flex -o ./%:r.c ./% && gcc ./%:r.c -o ./%:r -ggdb -l fl 
 
 command! Wget execute "!wget -c -i ./%"
 command! WordCount call Wc()
-
-nnoremap <F10> :Hexmode<CR>
-inoremap <F10> <Esc>:Hexmode<CR>
-vnoremap <F10> :<C-U>Hexmode<CR>

@@ -3,11 +3,10 @@
  * File Name     :
  * Purpose       :
  * Creation Date :
- * Last Modified : Mon 12 May 2014 09:52:17 AM CEST
+ * Last Modified : Tue 01 Nov 2016 05:24:13 PM CET
  * Created By    :
  */
 
-#define _XOPEN_SOURCE 9001
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -21,7 +20,13 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
+#include <cuda.h>
 
+// hello from GPU kernel
+__global__ void helloFromGPU(void)
+{
+    printf("Hello World from GPU! \n");
+}
 
 int main (int argc, char *argv[])
 {
@@ -29,5 +34,9 @@ int main (int argc, char *argv[])
     printf("???\n");
     printf("Profit\n");
 
+    helloFromGPU <<<1, 10>>>();
+   
+    // release the device
+    cudaDeviceReset();
     return 0;
 }

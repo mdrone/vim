@@ -1,0 +1,31 @@
+:insert
+/**
+ * File Name     :
+ * Purpose       :
+ * Creation Date :
+ * Last Modified : Tue 18 Jun 2013 05:33:33 PM CEST
+ * Created By    :
+ *
+ */
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+
+public class Template {
+
+	
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	
+	@Test
+	public void testComputerzug() {
+	}
+
+}

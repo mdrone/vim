@@ -1,12 +1,12 @@
 :insert
 /*
-* File Name     :
-* Purpose       :
-* Creation Date :
-* Last Modified : Sun 21 Apr 2013 07:13:18 PM CEST
-* Created By    :
-*
-*/
+ * File Name     :
+ * Purpose       :
+ * Creation Date :
+ * Last Modified : Tue 18 Jun 2013 05:34:01 PM CEST
+ * Created By    :
+ *
+ */
 
 %%
 username printf("%s", getlogin());

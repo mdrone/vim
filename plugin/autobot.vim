@@ -17,13 +17,16 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
+autocmd bufnewfile *.nse source ~/.vim/templates/Template.nse
+
 autocmd bufnewfile *.b source ~/.vim/templates/Template.b
 
 autocmd bufnewfile *.s source ~/.vim/templates/Template.s
 
-au BufNewFile,BufRead,BufEnter *.tex setlocal spell spelllang=de_de
+au BufNewFile,BufRead,BufEnter *.tex setlocal spell spelllang=de_de,en_us
 au BufNewFile,BufRead,BufEnter *en.tex setlocal spell spelllang=en_us
 "au BufNewFile,BufRead,BufEnter *.txt setlocal spell spelllang=en_en
+autocmd bufnewfile *.bib so ~/.vim/templates/Template.bib
 autocmd bufnewfile *doc.tex so ~/.vim/templates/Template.tex
 autocmd bufnewfile *pres.tex so ~/.vim/templates/TemplatePresentation.tex
 autocmd bufnewfile *.tex exe "1," . 8 . "g/File Name     :.*/s//File Name     : " .expand("%")
@@ -46,6 +49,14 @@ autocmd Bufwritepre,filewritepre *.c execute "normal ma"
 autocmd Bufwritepre,filewritepre *.c exe "1," . 8 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
 autocmd bufwritepost,filewritepost *.c execute "normal `a"
 "autocmd bufwritepost,filewritepost *.c execute \"!indent -orig ./%"
+
+autocmd bufnewfile *.cu so ~/.vim/templates/Template.cu
+autocmd bufnewfile *.cu exe "1," . 8 . "g/File Name     :.*/s//File Name     : " .expand("%")
+autocmd bufnewfile *.cu exe "1," . 8 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
+autocmd bufnewfile *.cu silent! exe InsertHeader()
+autocmd Bufwritepre,filewritepre *.cu execute "normal ma"
+autocmd Bufwritepre,filewritepre *.cu exe "1," . 8 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
+autocmd bufwritepost,filewritepost *.cu execute "normal `a"
 
 autocmd bufnewfile *.lxi so ~/.vim/templates/Template.lxi
 autocmd bufnewfile *.lxi exe "1," . 8 . "g/File Name     :.*/s//File Name     : " .expand("%")

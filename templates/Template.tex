@@ -3,7 +3,7 @@
 % File Name     :
 % Purpose       :
 % Creation Date :
-% Last Modified : Wed 04 Jun 2014 02:27:11 PM CEST
+% Last Modified : Tue 01 Nov 2016 05:31:06 PM CET
 % Created By    :
 %
 
@@ -23,21 +23,35 @@
 
 \\usepackage[ngerman]{babel}
 
-\\usepackage{fancyhdr}
+%\\usepackage{fancyhdr}
 
 \\usepackage{amsmath}
 
 \\usepackage{graphicx}
 
+\\usepackage{pdfpages}
+
+\\usepackage{pgfplots}
+
+\\usepackage[printonlyused]{acronym}
+
+\\usepackage{setspace}
+
+\\usepackage{titling}
+
+\\usepackage[style=authoryear,sorting=ynt,backend=bibtex]{biblatex}
+
 \\usepackage[hidelinks]{hyperref}
 
-\\usepackage{biblatex}
+\\pgfplotsset{compat=1.5}
 
-\\pagestyle{fancy}
+\\bibliography{BIB}
 
-\\fancyhead[R]{\today}
+%\\pagestyle{fancy}
 
-\\fancyhead[L]{Vorlesung}
+%\\fancyhead[R]{\today}
+
+%\\fancyhead[L]{Vorlesung}
 
 \\lstset{
 breaklines=true,
@@ -50,15 +64,55 @@ literate={ö}{{\"o}}1
          {Ö}{{\"O}}1
 }
 
+\\setstretch{1.3}
+
+\\newcommand{\subtitle}[1]{%
+\\posttitle{%
+\\par\end{center}
+\\begin{center}\large#1\end{center}
+\\vskip0.5em}%
+}
+
+\\newcommand*\BlankPage{\newpage\null\thispagestyle{empty}\newpage}
+
+\\newcommand{\comment}[1]{}  %comment not shown
 
 \\begin{document}
 
+\\pagenumbering{roman}
+
 \\title{Projekt}
 
-\\author{AUTHOR}
+\\author{Author}
 
 \\maketitle
 
+\\BlankPage
+
+\\phantomsection
+
+\\addcontentsline{toc}{section}{Abstract}
+
+\\section*{Abstract}
+
+\\cleardoublepage
+\\phantomsection
+
+\\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+
+\\listoffigures
+
+\\cleardoublepage
+
+\\section*{Abkürzungsverzeichnis}
+
+\\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+
+\\begin{acronym}
+
+    \\acro{ACK}{Acknownledge}
+
+\\end{acronym}
 
 \\newpage
 
@@ -72,42 +126,64 @@ literate={ö}{{\"o}}1
 
 \\newpage
 
+\\pagenumbering{arabic}
+
 \\section{Einleitung}
 
-
-\\subsection{Szenario}
+\\label{sec:introduction}
 
 
 \\subsection{Problemstellung}
 
+\\subsection{Lösungsansatz}
 
 \\footnote{link}
 
+\\section{Theorie}
 
-\\begin{tabular} [h] {||c|l|c||} 
+\\section{Praxis}
 
-\\hline \rule[-1.5mm]{0pt}{5.5ex} & \normalsize Beschreibung1 & Beschreibung2 \\ 
+\\section{Fazit}
 
-\\hline
 
-\\hline \rule[-1.5mm]{0pt}{5.5ex} Fall1 & Zelle1 & Zelle2 \\ 
+%\\begin{tabular} [h] {||c|l|c||} 
 
-\\hline \rule[-1.5mm]{0pt}{5.5ex} 2 &  & \\ 
+%\\hline \rule[-1.5mm]{0pt}{5.5ex} & \normalsize Beschreibung1 & Beschreibung2 \\ 
 
-\\hline \rule[-1.5mm]{0pt}{5.5ex} 3 &  & \\ 
+%\\hline
 
-\\hline \rule[-1.5mm]{0pt}{5.5ex} 4 &  & \\ 
+%\\hline \rule[-1.5mm]{0pt}{5.5ex} Fall1 & Zelle1 & Zelle2 \\ 
 
-\\hline \rule[-1.5mm]{0pt}{5.5ex} 5 &  & \\ 
+%\\hline \rule[-1.5mm]{0pt}{5.5ex} 2 &  & \\ 
 
-\\hline \rule[-1.5mm]{0pt}{5.5ex} 6 &  & \\ 
+%\\hline \rule[-1.5mm]{0pt}{5.5ex} 3 &  & \\ 
 
-\\hline \rule[-1.5mm]{0pt}{5.5ex} 7 &  & \\ 
+%\\hline \rule[-1.5mm]{0pt}{5.5ex} 4 &  & \\ 
 
-\\hline
+%\\hline \rule[-1.5mm]{0pt}{5.5ex} 5 &  & \\ 
 
-\\end{tabular}
+%\\hline \rule[-1.5mm]{0pt}{5.5ex} 6 &  & \\ 
 
+%\\hline \rule[-1.5mm]{0pt}{5.5ex} 7 &  & \\ 
+
+%\\hline
+
+%\\end{tabular}
+
+
+\\newpage
+
+\\phantomsection
+
+\\addcontentsline{toc}{section}{Literatur}
+
+\\interlinepenalty 10000
+
+%\\bibliographystyle{alpha}
+
+%\\medskip % mittelgrosser abstand
+
+\\printbibliography
 
 \\newpage
 
@@ -121,9 +197,9 @@ literate={ö}{{\"o}}1
 
 \\newpage
 
-\\begin{thebibliography}{15}
+%\\begin{thebibliography}{15}
 
-\\end{thebibliography}
+%\\end{thebibliography}
 
 
 \\end{document}
