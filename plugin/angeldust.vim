@@ -105,6 +105,16 @@ command! ELFDisassemble call ELFDisassemble()
 
 command! Flex execute "!flex -o ./%:r.c ./% && gcc ./%:r.c -o ./%:r -ggdb -l fl && ./%:r"
 
-
 command! Wget execute "!wget -c -i ./%"
 command! WordCount call Wc()
+
+function! Incr()
+    let a = line('.') - line("'<")
+    let c = virtcol("'<")
+    if a > 0
+        execute 'normal! '.c.'|'.a."\<C-a>"
+    endif
+    normal `<
+endfunction
+
+command! Incr call Incr()
