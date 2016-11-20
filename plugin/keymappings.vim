@@ -10,7 +10,7 @@ nnoremap <F10> :Hexmode<CR>
 inoremap <F10> <Esc>:Hexmode<CR>
 vnoremap <F10> :<C-U>Hexmode<CR>
 
-vnoremap <C-j> :call Incr()<CR>
+"vnoremap <C-j> :call Incr()<CR>
 
 :map <F4> :!bf < ./% > ./%:r && chmod +x ./%:r && ./%:r
 :map <F5> :!make -f ~/makefiles/c -j2 ./%:r && ./%:r
